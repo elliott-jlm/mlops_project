@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anime Rating Prediction - Result</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>Anime Rating Prediction - Result</h1>
+    </header>
+    <main>
+      <p>The predicted rating is <span id="predicted-rating"></span>.</p>
+      <p>The following information was submitted:</p>
+      <ul>
+        <li><strong>Title:</strong> <span id="title"></span></li>
+        <li><strong>Genre:</strong> <span id="genre"></span></li>
+        <li><strong>Description:</strong> <span id="description"></span></li>
+        <li><strong>Type:</strong> <span id="type"></span></li>
+        <li><strong>Producer:</strong> <span id="producer"></span></li>
+        <li><strong>Studio:</strong> <span id="studio"></span></li>
+      </ul>
+      <button onclick="window.location.href = 'page.html';">Return to previous page</button>
+    </main>
+    <footer>
+      <p>&copy; 2023 Anime Rating Prediction</p>
+    </footer>
+    <script>
+      // Get the query parameters from the URL
+      const params = new URLSearchParams(window.location.search);
+      
+      // Get the predicted rating from the query parameters
+      const predictedRating = params.get('predicted_rating');
+      document.getElementById('predicted-rating').textContent = predictedRating;
+
+      // Get the other form data from the query parameters and display them
+      document.getElementById('title').textContent = params.get('title');
+      document.getElementById('genre').textContent = params.getAll('genre').join(', ');
+      document.getElementById('description').textContent = params.get('description');
+      document.getElementById('type').textContent = params.get('type');
+      document.getElementById('producer').textContent = params.get('producer');
+      document.getElementById('studio').textContent = params.getAll('studio').join(', ');
+    </script>
+  </body>
+</html>
