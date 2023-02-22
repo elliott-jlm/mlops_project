@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Anime Rating Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body>
+    <header>
+      <h1>Anime Rating Prediction</h1>
+    </header>
+    <main>
+      <h2>Rating Prediction:</h2>
+      <p>The predicted rating for "{{ title }}" is {{ rating }}.</p>
+      
+      <h2>User Input:</h2>
+      <p><strong>Title:</strong> {{ title }}</p>
+      <p><strong>Genre:</strong> {% for g in genre %} {{ g }} {% endfor %}</p>
+      <p><strong>Description:</strong> {{ description }}</p>
+      <p><strong>Type:</strong> {{ type }}</p>
+      <p><strong>Producer:</strong> {% for p in producer %} {{ p }} {% endfor %}</p>
+      <p><strong>Studio:</strong> {% for s in studio %} {{ s }} {% endfor %}</p>
+
+      <form action="/">
+        <button type="submit">Return to Input Form</button>
+      </form>
+
+    </main>
+    <footer>
+      <p>&copy; 2023 Anime Rating Prediction</p>
+    </footer>
+  </body>
+</html>
