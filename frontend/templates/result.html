@@ -2,7 +2,7 @@
 <html>
   <head>
     <title>Anime Rating Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-result.css') }}">
   </head>
   <body>
     <header>
@@ -10,7 +10,7 @@
     </header>
     <main>
       <h2>Rating Prediction:</h2>
-      <p>The predicted rating for "{{ title }}" is {{ rating }}.</p>
+      <p>The predicted rating for <strong>"{{ title }}"</strong> is <strong>{{ rating }}</strong>.</p>
       
       <h2>User Input:</h2>
       <p><strong>Title:</strong> {{ title }}</p>

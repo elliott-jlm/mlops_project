@@ -1,15 +1,24 @@
 from flask import Flask, render_template, request, send_file
 import joblib
+import os
 import pandas as pd
 
-app = Flask(__name__, static_url_path='/static')
+app = Flask(__name__)
+
+# Construct the absolute path to the static directory
+static_dir = '../frontend/static'
+app.static_folder = static_dir
+
+# Construct the absolute path to the templates directory
+template_dir = '../frontend/templates'
+app.template_folder = template_dir
 
 # Load the trained model
 # model = joblib.load('model.pkl')
 
 @app.route('/')
 def index():
-    return send_file('templates/page.html')
+    return send_file(template_dir+'/page.html')
 
 @app.route('/predict-rating', methods=['GET', 'POST'])
 def predict_rating():

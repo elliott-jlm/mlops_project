@@ -1,5 +1,10 @@
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 body {
-  background-image: url('../background1.gif');
+  background-image: url('../background.gif');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -12,7 +17,7 @@ header {
   color: #ffffff;
   text-align: center;
   border-radius: 5px;
-  padding: 0.3rem;
+  padding: 0.1rem;
   margin-bottom: 1rem;
 }
 
@@ -60,7 +65,7 @@ form select option {
 }
 
 #submit-button {
-  background-color: #ff4d4f;
+  background-color: #4caf50;
   color: #ffffff;
   padding: 0.75rem 1.5rem;
   border: none;
@@ -70,6 +75,10 @@ form select option {
   transition: background-color 0.2s ease;
   display: block;
   margin: 0.5rem auto;
+}
+
+#submit-button:hover {
+  background-color: #72cc6a;
 }
 
 /* style the remove button */
@@ -87,49 +96,11 @@ form select option {
   width: 300px !important; /* Adjust this value as needed */
 }
 
-.result-container {
-  background-color: #ffffff;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 5px;
-  padding: 2rem;
-  margin-top: 2rem;
-}
-
-.result-container h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.result-container p {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-}
-
-.result-container .button-container {
-  text-align: center;
-}
-
-.result-container form button {
-  background-color: #4caf50;
-  color: #ffffff;
-  padding: 0.75rem 1.5rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 2rem;
-  font-size: 1.2rem;
-  transition: background-color 0.2s ease;
-}
-
-.result-container form button:hover {
-  background-color: #72cc6a;
-}
-
 footer {
   background-color: #333;
   color: #ffffff;
   text-align: center;
-  padding: 1rem;
+  padding: 0.2rem;
   margin-top: 1rem;
   border-radius: 5px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
