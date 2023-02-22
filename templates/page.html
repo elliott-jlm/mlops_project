@@ -3,6 +3,8 @@
   <head>
     <title>Anime Rating Prediction</title>
     <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link rel="stylesheet" href="path/to/choices.min.css" />
+    <script src="../static/Choices-10.2.0/public/assets/scripts/choices.min.js"></script>
   </head>
   <body>
     <header>
@@ -10,10 +12,11 @@
     </header>
     <main>
       <form method="POST" action="http://127.0.0.1:5000/predict-rating">
-        <label for="title">Title:</label>
+        <label for="title">Title :</label>
         <input type="text" id="title" name="title" required>
 
-        <label for="genre">Genre:</label>
+        <label for="genre">Genre :</label>
+        <div class="choices-scroll">
         <select id="genre" name="genre" multiple required>
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
@@ -59,12 +62,12 @@
             <option value="Yaoi">Yaoi</option>
             <option value="Yuri">Yuri</option>
         </select>
-
-        <label for="description">Description:</label>
+      </div>
+        <label for="description">Description :</label>
 
         <textarea id="description" name="description" rows="4" required></textarea>
 
-        <label for="type">Type:</label>
+        <label for="type">Type :</label>
         <select id="type" name="type" required>
           <option value="TV">TV</option>
           <option value="Movie">Movie</option>
@@ -75,7 +78,8 @@
           <option value="Unknown">Unknown</option>
         </select>
 
-        <label for="producer">Producer:</label>
+        <label for="producer">Producer :</label>
+        <div class="choices-scroll">
         <select name="producer" id="producer" required multiple>
             <option value="ToysFactory">ToysFactory</option>
             <option value="12DiaryHolders">12DiaryHolders</option>
@@ -1173,8 +1177,10 @@
             <option value="teamKG">teamKG</option>
             <option value="tsuritamapartners">tsuritamapartners</option>
         </select>
+      </div>
 
-        <label for="studio">Studio:</label>
+        <label for="studio">Studio :</label>
+        <div class="choices-scroll">
         <select name="studio" id="studio" multiple required>
             <option value="BrainsBase">BrainsBase</option>
             <option value="10Gauge">10Gauge</option>
@@ -1695,14 +1701,40 @@
             <option value="teamKG">teamKG</option>
             <option value="tear-studio">tear-studio</option>
             <option value="ufotable">ufotable</option>
-            
-        </select>
-
-        <button type="submit">Predict Rating</button>
+        </select>          
+      </div>
+        
+        <button id="submit-button" type="submit">Predict Rating</button>
       </form>
     </main>
     <footer>
       <p>&copy; 2023 Anime Rating Prediction</p>
     </footer>
   </body>
+  <script src="choices.min.js"></script>
+    <script>
+      const mySelect1 = document.getElementById('genre');
+      const choices1 = new Choices(mySelect1, {
+        removeItemButton: true,
+        duplicateItemsAllowed: false,
+        placeholder: true,
+        placeholderValue: 'Select genres',
+      });
+
+      const mySelect2 = document.getElementById('producer');
+      const choices2 = new Choices(mySelect2, {
+        removeItemButton: true,
+        duplicateItemsAllowed: false,
+        placeholder: true,
+        placeholderValue: 'Select producer',
+      });
+
+      const mySelect3 = document.getElementById('studio');
+      const choices3 = new Choices(mySelect3, {
+        removeItemButton: true,
+        duplicateItemsAllowed: false,
+        placeholder: true,
+        placeholderValue: 'Select producer',
+      });
+    </script>
 </html>

@@ -1,42 +1,136 @@
+body {
+  background-image: url('../background1.gif');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+}
+
 header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
-  
-  main {
-    padding: 1rem;
-    margin: 0 auto;
-    max-width: 800px;
-  }
-  
-  form label {
-    display: block;
-    margin-top: 1rem;
-  }
-  
-  form input, form select, form textarea {
-    width: 100%;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  form button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 0.5rem 1rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-  
-  footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-  }
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin-bottom: 1rem;
+}
+
+main {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.3rem;
+  margin: 0 auto;
+  max-width: 800px;
+  background-color: #eaf4f4;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+form label {
+  display: block;
+  font-weight: bolder;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+.choices-scroll {
+  height: 100px;
+  overflow: auto;
+  background-color: #ffffff;
+}
+
+.choices-scroll::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+form input, form select, form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #ffffff;
+}
+
+form select option {
+  background-color: #ffffff;
+}
+
+#submit-button {
+  background-color: #ff4d4f;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+  display: block;
+  margin: 0.5rem auto;
+}
+
+/* style the remove button */
+.choices__button {
+  padding: 0;
+  margin-left: 5px;
+  background-color: transparent;
+  border: none;
+  color: #999;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.choices__input--cloned {
+  width: 300px !important; /* Adjust this value as needed */
+}
+
+.result-container {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 2rem;
+  margin-top: 2rem;
+}
+
+.result-container h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.result-container p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.result-container .button-container {
+  text-align: center;
+}
+
+.result-container form button {
+  background-color: #4caf50;
+  color: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  transition: background-color 0.2s ease;
+}
+
+.result-container form button:hover {
+  background-color: #72cc6a;
+}
+
+footer {
+  background-color: #333;
+  color: #ffffff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
