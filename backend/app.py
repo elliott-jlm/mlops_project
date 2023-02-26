@@ -3,6 +3,8 @@ import joblib
 import os
 import pandas as pd
 
+from predict import prediction_anime
+
 app = Flask(__name__)
 
 # Construct the absolute path to the static directory
@@ -14,7 +16,7 @@ template_dir = '../frontend/templates'
 app.template_folder = template_dir
 
 # Load the trained model
-# model = joblib.load('model.pkl')
+
 
 @app.route('/')
 def index():
@@ -32,18 +34,11 @@ def predict_rating():
         producer = request.form['producer']
         studio = request.form.getlist('studio')
         
-        # Preprocess the input data
-        input_df = pd.DataFrame({'title': [title],
-                                 'genre': [','.join(genre)],
-                                 'description': [description],
-                                 'type': [anime_type],
-                                 'producer': [producer],
-                                 'studio': [','.join(studio)]})
-        
-        # Make the prediction
-        # rating = model.predict(input_df)[0]
-        rating = 999
-        
+        # preprocess 
+        genre, producer, studio = ','.join(genre), ','.join(producer), ','.join(studio)
+
+        rating = prediction_anime(title, genre, description, anime_type, producer, studio)
+
         # Render the result template
         return render_template('result.html', title=title, genre=genre, description=description, type=anime_type, producer=producer, studio=studio, rating=rating)
     else:
