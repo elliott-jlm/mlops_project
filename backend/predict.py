@@ -4,6 +4,7 @@ import numpy as np
 from scipy.sparse import csr_matrix
 import scipy.sparse as sp
 import statistics
+from sklearn.metrics.pairwise import cosine_similarity
 
 from sentence_transformers import SentenceTransformer
 
@@ -15,16 +16,21 @@ data_genre = pd.read_csv('./backend/data_genre.csv', sep=";")
 data_producer = pd.read_csv('./backend/data_producer.csv', sep=";")
 data_studio = pd.read_csv('./backend/data_studio.csv', sep=";")
 data_type = pd.read_csv('./backend/data_type.csv', sep=";")
-
 embeddings = np.load('./backend/embeddings.npy')
+
+
 
 def clean_data(x):
     for character in "['] ":
         x = x.replace(character, '')
     
     return x
+
+
+
 data.dropna(subset=['Rating','Producer','Studio'], inplace=True)
 data.reset_index(drop=True, inplace=True)
+
 
 
 def database_anime(title, genre, synopsis, types, producer, studio):
@@ -40,7 +46,6 @@ def database_anime(title, genre, synopsis, types, producer, studio):
 
 
 
-
 def sparse_data(data_genre, data_producer, data_studio, data_type):
 
     sparse_genre = csr_matrix(data_genre.values.tolist())
@@ -51,11 +56,11 @@ def sparse_data(data_genre, data_producer, data_studio, data_type):
     return sparse_genre, sparse_producer, sparse_studio, sparse_type
 
 
-from sklearn.metrics.pairwise import cosine_similarity
 
 def prediction_method(c, m):
     similarity_matrix = cosine_similarity(c, m)
     return(similarity_matrix)
+
 
 
 def prediction_anime(title, genre, synopsis, types, producer, studio):

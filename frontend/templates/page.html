@@ -16,7 +16,6 @@
         <input type="text" id="title" name="title" required>
 
         <label for="genre">Genre :</label>
-        <div class="choices-scroll">
         <select id="genre" name="genre" multiple required>
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
@@ -62,7 +61,6 @@
             <option value="Yaoi">Yaoi</option>
             <option value="Yuri">Yuri</option>
         </select>
-      </div>
         <label for="description">Description :</label>
 
         <textarea id="description" name="description" rows="4" required></textarea>
@@ -79,7 +77,6 @@
         </select>
 
         <label for="producer">Producer :</label>
-        <div class="choices-scroll">
         <select name="producer" id="producer" required multiple>
             <option value="ToysFactory">ToysFactory</option>
             <option value="12DiaryHolders">12DiaryHolders</option>
@@ -1177,10 +1174,8 @@
             <option value="teamKG">teamKG</option>
             <option value="tsuritamapartners">tsuritamapartners</option>
         </select>
-      </div>
 
         <label for="studio">Studio :</label>
-        <div class="choices-scroll">
         <select name="studio" id="studio" multiple required>
             <option value="BrainsBase">BrainsBase</option>
             <option value="10Gauge">10Gauge</option>
@@ -1702,7 +1697,6 @@
             <option value="tear-studio">tear-studio</option>
             <option value="ufotable">ufotable</option>
         </select>          
-      </div>
         
         <button id="submit-button" type="submit">Predict Rating</button>
       </form>
@@ -1711,30 +1705,4 @@
       <p>&copy; 2023 Anime Rating Prediction</p>
     </footer>
   </body>
-  <script src="choices.min.js"></script>
-    <script>
-      const mySelect1 = document.getElementById('genre');
-      const choices1 = new Choices(mySelect1, {
-        removeItemButton: true,
-        duplicateItemsAllowed: false,
-        placeholder: true,
-        placeholderValue: 'Select genres',
-      });
-
-      const mySelect2 = document.getElementById('producer');
-      const choices2 = new Choices(mySelect2, {
-        removeItemButton: true,
-        duplicateItemsAllowed: false,
-        placeholder: true,
-        placeholderValue: 'Select producer',
-      });
-
-      const mySelect3 = document.getElementById('studio');
-      const choices3 = new Choices(mySelect3, {
-        removeItemButton: true,
-        duplicateItemsAllowed: false,
-        placeholder: true,
-        placeholderValue: 'Select producer',
-      });
-    </script>
 </html>

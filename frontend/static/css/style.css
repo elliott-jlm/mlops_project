@@ -40,17 +40,6 @@ form label {
   font-size: 1.2rem;
 }
 
-.choices-scroll {
-  height: 100px;
-  overflow: auto;
-  background-color: #ffffff;
-}
-
-.choices-scroll::-webkit-scrollbar {
-  width: 0;
-  height: 0;
-}
-
 form input, form select, form textarea {
   width: 100%;
   padding: 0.75rem;
@@ -79,21 +68,6 @@ form select option {
 
 #submit-button:hover {
   background-color: #72cc6a;
-}
-
-/* style the remove button */
-.choices__button {
-  padding: 0;
-  margin-left: 5px;
-  background-color: transparent;
-  border: none;
-  color: #999;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.choices__input--cloned {
-  width: 300px !important; /* Adjust this value as needed */
 }
 
 footer {

@@ -15,8 +15,6 @@ app.static_folder = static_dir
 template_dir = '../frontend/templates'
 app.template_folder = template_dir
 
-# Load the trained model
-
 
 @app.route('/')
 def index():
