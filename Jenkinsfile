@@ -15,11 +15,11 @@ pipeline {
             }
             steps {
                 // Prompt user for confirmation
-                input {
-                    message "Do you want to release this version to production?"
-                    ok "Yes"
-                    submitter "No"
-                }
+                // input {
+                //     message "Do you want to release this version to production?"
+                //     ok "Yes"
+                //     submitter "No"
+                // }
 
                 // Merge release branch to main
                 bat 'git merge origin/release'
