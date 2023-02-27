@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH = "C:/WINDOWS/SYSTEM32;C:/Users/ellio/AppData/Local/Programs/Python/Python310;C:/Program Files/Docker/Docker/resources/bin"
+    }
+    
     stages {
         stage('Build and Test') {
             steps {
