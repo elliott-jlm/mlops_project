@@ -5,7 +5,7 @@ pipeline {
         stage('Build and Test') {
             steps {
                 // Build and run unit tests
-                bat 'python test_predict.py'
+                bat 'python backend/test_predict.py'
             }
         }
 
